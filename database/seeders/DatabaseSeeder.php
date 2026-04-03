@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
 
         // Create sample events
         Event::create([
-            'title' => 'Laravel Development Conference 2026',
+            'title' => 'Laravel Development Conference',
             'description' => 'Join us for an amazing Laravel development conference featuring industry experts, hands-on workshops, and networking sessions. Learn about the latest Laravel features and best practices.',
             'location' => 'New York Convention Center',
             'event_datetime' => Carbon::now()->addDays(30)->setTime(9, 0),
