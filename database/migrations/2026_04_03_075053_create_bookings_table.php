@@ -12,9 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    $table->id();
+    $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+    $table->foreignId('event_id')->constrained()->cascadeOnDelete();
+    $table->integer('seats');
+    $table->enum('status',['booked','cancelled'])->default('booked');
+    $table->timestamp('booking_date')->useCurrent();
+    $table->timestamps();
+});
     }
 
     /**
